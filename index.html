@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+    <title>Le Taquin</title>
+    <meta name="author" content="Félix Fonteneau & Saveria Frati--Peraldi">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script language="javascript" src="xxx.js"></script>
+</head>  
+
+<body>
+    <h1>Le Taquin</h1>
+    <hr>
+    <h2> Dans le cadre du projet de fin d'année d'Applications du Web, Félix Fonteneau et Saveria Frati--Peraldi vous présentent leur version du TAQUIN.
+    </h2>
+
+	<p>Vous devez remettre tous les carreaux dans l'ordre (de haut en bas et de gauche à droite) avec la case vide en bas à droite, simplement en échangeant des carreaux avec le trou. On peut faire glisser un seul carreau à la fois et seuls les carreaux contigus au trou peuvent glisser. Certaines configurations initiales n'ont pas de solution.
+
+	Lorsque le taquin est résolu, un message au bas de la page vous indique le nombre de déplacements utilisés pour la résolution.
+	</p>
+
+	<p>Veuillez choisir la taille de la grille: 2x2, 2x3, 3x2 ou 3x3.
+
+		<a class="bouton1" href="exo4.html">Autre test</a>
+		<a class="bouton2" href="exo4.html">Autre test</a>
+		<a class="bouton3" href="exo4.html">Autre test</a>
+		<a class="bouton4" href="exo4.html">Autre test</a>
+
+	<div id="message" style="visibility: hidden">
+    Félicitations, vous avez résolu le taquin à l'aide de <span id="deplacements"></span> déplacements.
+	</div>
+
+
+A la fin d'une partie, le joueur doit être redirigé vers la page d'accueil. Sur la page de jeu, si l'utilisateur clique sur un carreau non contigu au trou, ou bien clique sur le trou, il ne se passe rien. A la fin de la partie, le programme affiche de nombre total de déplacements de carreaux effectués pour résoudre le taquin.
+
+Mise en oeuvre
+
+Au début de la partie, un script PHP soit générer une grille de la taille voulue avec les carreaux disposés aléatoirement. Une fois la grille affichée chez le client, c'est le code JavaScript qui prend le relai. Il n'y a donc pas de rechargement de la page entre deux coups. 
+    </p>
+</body>
+
+</html>
