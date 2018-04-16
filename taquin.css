@@ -1,0 +1,21 @@
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#grid {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#message {
+    border: solid 1px blue;
+    font-size: 200%;
+    margin-top: 50px;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 30px;
+    padding: 20px;
+    height: 80px;
+    visibility: hidden;
+}

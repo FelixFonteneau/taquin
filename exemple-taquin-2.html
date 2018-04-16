@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Taquin</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+  <link rel="stylesheet" type="text/css" href="taquin.css">
+  <script language="javascript" src="taquin.js"></script>
+</head>
+<body>
+
+<h1>Taquin</h1>
+
+<p>
+Vous devez résoudre le taquin en déplaçant les chiffres pour les aligner dans l'ordre de 1 à 8. Vous ne pouvez déplacer que les chiffres qui peuvent <em>glisser</em>
+à la place de la case vide. Lorsque le taquin est résolu, un message s'affiche au bas de la page.
+</p>
+
+<!-- Ce code HTML doit être généré par un script PHP -->
+<div id="grid">
+    <div class="row">
+        <img src="images/1.png" name="1" onclick="clickAt(0,0,this)">
+        <img src="images/2.png" name="2" onclick="clickAt(0,1,this)">
+        <img src="images/3.png" name="3" onclick="clickAt(0,2,this)">
+    </div>
+    <div class="row">
+        <img src="images/4.png" name="4" onclick="clickAt(1,0,this)">
+        <img src="images/5.png" name="5" onclick="clickAt(1,1,this)">
+        <img src="images/6.png" name="6" onclick="clickAt(1,2,this)">
+    </div>
+    <div class="row">
+        <img src="images/7.png" name="7" onclick="clickAt(2,0,this)">
+        <img src="images/8.png" name="8" onclick="clickAt(2,1,this)">
+        <img src="images/0.png" name="0" onclick="clickAt(2,2,this)">
+    </div>    
+</div>
+
+<div id="message">
+    Félicitations, vous avez résolu le taquin à l'aide de 27 déplacements
+</div>
+
+</body>
+</html>
