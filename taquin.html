@@ -1,3 +1,7 @@
+<?php
+  include(taquin.php);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,14 +10,49 @@
     <title>Le Taquin</title>
     <meta name="author" content="Félix Fonteneau et Saveria Frati--Peraldi">
     <link rel="stylesheet" type="text/css" href="taquin.css">
-    <script language="javascript" src="taquin.js"></script>
+    <script language="javascript" src="xxx.js"></script>
 </head>
-<body>
-  <div id="lignes">
 
+<body>
+    <h1>Le Taquin</h1>
+    <hr>
+
+    <div id="jeu" style="visibility: hidden">
+    </div>
+
+    <div id="message" style="visibility: hidden">
+    </div>
+
+  <div id='choix'>
+  	<p>Veuillez choisir la taille de la grille: 2x2, 2x3, 3x2 ou 3x3. </p>
+
+    <form action="/action_page.php">
+      <input type="radio" name="jeu" value="2x2" checked="unchecked"> 2x2 <br/>
+      <input type="radio" name="jeu" value="2x3" checked="unchecked"> 2x3 <br/>
+      <input type="radio" name="jeu" value="3x2" checked="unchecked"> 3x2 <br/>
+      <input type="radio" name="jeu" value="3x3" checked="checked"> 3x3   <br/>
+      <input type="submit" value="JOUER">
+    </form>
   </div>
 
 
 
 
+
+
+
+
+
+  <h2>
+    Dans le cadre du projet de fin d'année d'Applications du Web, Félix Fonteneau et Saveria Frati--Peraldi vous présentent leur version du TAQUIN.
+  </h2>
+	<p>Vous devez remettre tous les carreaux dans l'ordre (de haut en bas et de gauche à droite) avec la case vide en bas à droite, simplement en échangeant des carreaux avec le trou. On peut faire glisser un seul carreau à la fois et seuls les carreaux contigus au trou peuvent glisser. Certaines configurations initiales n'ont pas de solution.
+
+	Lorsque le taquin est résolu, un message au bas de la page vous indique le nombre de déplacements utilisés pour la résolution.
+	</p>
+
+
+
 </body>
+
+</html>
