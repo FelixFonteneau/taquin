@@ -5,7 +5,7 @@
   $grid = $_GET["jeu"];
 
   function getNom($path) {
-    $a = explode(".",basename($s));
+    $a = explode(".",basename($path));
     return  $a[0];
   }
 
@@ -16,7 +16,9 @@
     exit;
   }
 
-  $listImage = glob("image/$grid/part-*.jpeg");
+  $listImage = glob("images/$grid/*");
+
+
 	shuffle($listImage);
 
   $dim = explode("x",$grid);
@@ -42,14 +44,17 @@
 
      <div id="jeu">
         <?php
-       	  for($i = 0; $i < $col; $i+ ) {
-            echo "<div>"
+
+       	  for($i = 0; $i < $col; $i++ ) {
+            echo "<div>";
+
             for($j = 0; $j < $lig; $j++){
-              ?>
-                <img name="<?=   ?>" src="<?= $array[$i+$j] ?>" />
-              <?php
+              $indice = 3*$i + $j;
+              $nom = getNom($listImage[$indice]);
+              echo "<img name=\"$nom\" src=\"$listImage[$indice]\" />";
             }
-            echo "</div>"
+
+            echo "</div>";
        	  }
         ?>
      </div>
