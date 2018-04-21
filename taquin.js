@@ -5,7 +5,7 @@ window.onload = function() {
   let hole_row ;    // la ligne où se trouve le trou
   let hole_column;  // la colonne où se trouve le trou
   let nbClick = 0;  // le nombre de chiffres déplacés
-
+ 
 
   function clickAt(ligne,colonne,image) {
 
