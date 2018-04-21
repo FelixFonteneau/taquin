@@ -1,7 +1,20 @@
+#jeu{
+  display: table;
+  margin: 0 auto;
+}
+
+#band{
+  background-color: #4A0046;
+  padding: 5px;
+}
+
 #bandeau {
  padding:0;
- margin:0;
  list-style-type:none;
+ display: table;
+ margin: 0 auto;
+ text-decoration-color: white;
+
  }
 li {
  margin-left:2px;
@@ -11,8 +24,7 @@ li {
  display:block;
  float:left;
  width:100px;
- background-color:#6495ED;
- color:black;
+ background-color:#4A0046;
  text-decoration:none;
  text-align:center;
  padding:5px;
@@ -21,12 +33,16 @@ li {
  border-color:#DCDCDC #696969 #696969 #DCDCDC;
  }
 #bandeau li a:hover {
- background-color:#D3D3D3;
+ background-color:#4A0046;
  border-color:#696969 #DCDCDC #DCDCDC #696969;
  }
 
+
+
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-color:#BD39BF;
+    color: white;
 }
 
 #grid {
@@ -34,21 +50,20 @@ body {
     margin-top: 50px;
 }
 
+
+
 #message {
-    border: solid 1px blue;
-    font-size: 200%;
-    margin-top: 50px;
-    margin-left: 30%;
-    margin-right: 30%;
-    margin-bottom: 30px;
-    padding: 20px;
-    height: 80px;
-    visibility: hidden;
+  font-size: 200%;
+  margin-top: 50px;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-bottom: 30px;
+  padding: 20px;
+  height: 80px;
 }
 
-#choix {
-  margin-left: 120px;
-
+#message.hidden {
+  display: none;
 }
 
 input[type=radio] {

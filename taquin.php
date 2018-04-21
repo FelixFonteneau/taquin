@@ -39,7 +39,8 @@
 
  <body>
      <h1>Le Taquin</h1>
-     <hr>
+
+     <div id="band">
 
      <ul id="bandeau">
       <li><a href="taquin.php?jeu=2x2">2x2</a></li>
@@ -48,8 +49,9 @@
       <li><a href="taquin.php?jeu=3x3">3x3</a></li>
     </ul>
 
-     <div id="message" style="visibility: hidden"></div>
+    </div>
 
+     <div id="message" style="visibility: hidden"></div>
      <div id="jeu">
         <?php
 
@@ -69,18 +71,5 @@
        	  }
         ?>
      </div>
-
-
-
-
-   <div id='choix'>
-   	<p>Veuillez choisir la taille de la grille: 2x2, 2x3, 3x2 ou 3x3. </p>
-
-     <form action="/action_page.php">
-       <input type="radio" name="jeu" value="2x2" checked="unchecked"> 2x2 <br/>
-       <input type="radio" name="jeu" value="2x3" checked="unchecked"> 2x3 <br/>
-       <input type="radio" name="jeu" value="3x2" checked="unchecked"> 3x2 <br/>
-       <input type="radio" name="jeu" value="3x3" checked="checked"> 3x3   <br/>
-       <input type="submit" value="JOUER">
-     </form>
-   </div>
+   </body>
+</html>

@@ -139,7 +139,6 @@ window.onload = function() {
     tabImg = document.getElementsByClassName('grille');
 
     for(let i = 0; i < tabImg.length - 1; i++){
-        console.log(tabImg[i].name.split('.')[0]+"   "+i);
         if(tabImg[i].name.split('.')[0] != i+1)return;
     }
     estTermine();
@@ -149,7 +148,7 @@ window.onload = function() {
   function estTermine(){
     let message = document.getElementById('message');
     message.style.visibility = "visible";
-    message.innerHTML = "Bravo !\nTu as reussi le taquin en "+nbClick+" mouvements.";
+    message.innerHTML = "Bravo !\nTu as reussi ce taquin en "+nbClick+" mouvements.";
 
     fini = true;
   }
