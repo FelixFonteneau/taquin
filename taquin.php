@@ -41,6 +41,8 @@
      <h1>Le Taquin</h1>
      <hr>
 
+     <div id="message" style="visibility: hidden">
+     </div>
 
      <div id="jeu">
         <?php
@@ -53,7 +55,7 @@
             for($j = 0; $j < $col; $j++){
               $indice = $col*$i + $j;
               $nom = getNom($listImage[$indice]);
-              echo "<img name=\"$nom\" src=\"$listImage[$indice]\" />\n";
+              echo "<img class=\"grille\" name=\"$nom\" src=\"$listImage[$indice]\" />\n";
             }
 
 
@@ -63,8 +65,7 @@
      </div>
 
 
-     <div id="message" style="visibility: hidden">
-     </div>
+
 
    <div id='choix'>
    	<p>Veuillez choisir la taille de la grille: 2x2, 2x3, 3x2 ou 3x3. </p>
