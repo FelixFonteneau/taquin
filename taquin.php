@@ -19,7 +19,7 @@
   $listImage = glob("images/$grid/*");
 
 
-	shuffle($listImage);
+	//shuffle($listImage);
 
   $dim = explode("x",$grid);
   $col = $dim[0];
@@ -45,14 +45,17 @@
      <div id="jeu">
         <?php
 
-       	  for($i = 0; $i < $col; $i++ ) {
-            echo "<div>";
+        // génération de la grille aléatoire.
+       	  for($i = 0; $i < $lig; $i++ ) {
+            echo "<div class=\"ligne\">";
 
-            for($j = 0; $j < $lig; $j++){
-              $indice = 3*$i + $j;
+            //partitionnement des collonnes.
+            for($j = 0; $j < $col; $j++){
+              $indice = $col*$i + $j;
               $nom = getNom($listImage[$indice]);
-              echo "<img name=\"$nom\" src=\"$listImage[$indice]\" />";
+              echo "<img name=\"$nom\" src=\"$listImage[$indice]\" />\n";
             }
+
 
             echo "</div>";
        	  }
