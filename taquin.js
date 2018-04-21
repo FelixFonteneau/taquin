@@ -17,6 +17,8 @@ window.onload = function() {
   let genere = false;
   let fini = false;
 
+  let timer;
+
   function deplacementAleatoire() {
     //on choisi une case adjacente aléatoirement.
     let lig;
@@ -46,29 +48,14 @@ window.onload = function() {
     }
 
     //on effectue le déplacement.
-    console.log(col+" "+lig);
-    console.log(document.getElementsByClassName('grille')[col+nbCol*lig].name);
     decalage(lig, col, document.getElementsByClassName('grille')[col+nbCol*lig]);
 
   }
 
   function generation() {
-    let timer;
-    //si on nes genere pas, on va generer
-    if(!genere){
-      genere = true;
-      //toutes les demi-secondes, on mélange aléatoirement l'image.
-      timer = setInterval(deplacementAleatoire, 200);
-
-    } else {
-      //si on genere et que l'utilisateur clique une nouvelle fois, on arrete la generation.
-      clearInterval(timer);
-
-      //on fait commencer le jeu.
-      debut = false;
-    }
-
-
+    genere = true;
+    //toutes les demi-secondes, on mélange aléatoirement l'image.
+    timer = setInterval(deplacementAleatoire, 50);
   }
 
 
@@ -123,7 +110,14 @@ window.onload = function() {
   //puis on échange les deux cases.
   function testClick(){
     if(debut){
-      generation();
+      if(!genere){
+        generation();
+        return;
+      }
+      //si on genere et que l'utilisateur clique une nouvelle fois, on arrete la generation.
+      clearInterval(timer);
+      //on fait commencer le jeu.
+      debut = false;
       return;
     }
 
@@ -145,7 +139,8 @@ window.onload = function() {
     tabImg = document.getElementsByClassName('grille');
 
     for(let i = 0; i < tabImg.length - 1; i++){
-        if(tabImg[i].name.split('.')[0] != i) return;
+        console.log(tabImg[i].name.split('.')[0]+"   "+i);
+        if(tabImg[i].name.split('.')[0] != i+1)return;
     }
     estTermine();
   }
@@ -153,7 +148,7 @@ window.onload = function() {
   //on arrete le jeu et on affiche un message
   function estTermine(){
     let message = document.getElementById('message');
-    messsage.style.visibility = "visible";
+    message.style.visibility = "visible";
     message.innerHTML = "Bravo !\nTu as reussi le taquin en "+nbClick+" mouvements.";
 
     fini = true;
@@ -165,12 +160,8 @@ window.onload = function() {
 
   grid = nbCol+"x"+nbLig;
 
-  console.log("nombre de colonnes : "+nbCol);
-
   trou_l = getLigne(document.getElementsByName('trou')[0]);
   trou_c = getColonne(document.getElementsByName('trou')[0]);
-
-  console.log("Trou ligne : "+trou_l+"  cols : "+trou_c);
 
   for(let i = 0; i < tabImg.length ; i++){
     tabImg[i].onclick = testClick;
