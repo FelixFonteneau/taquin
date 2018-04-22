@@ -59,7 +59,7 @@
        	  for($i = 0; $i < $lig; $i++ ) {
             echo "<div class=\"ligne\">";
 
-            //partitionnement des collonnes.
+            //partitionnement des colonnes.
             for($j = 0; $j < $col; $j++){
               $indice = $col*$i + $j;
               $nom = getNom($listImage[$indice]);
