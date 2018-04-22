@@ -55,7 +55,7 @@ window.onload = function() {
   function generation() {
     genere = true;
     //toutes les demi-secondes, on mélange aléatoirement l'image.
-    timer = setInterval(deplacementAleatoire, 50);
+    timer = setInterval(deplacementAleatoire, 1);
   }
 
 
@@ -121,6 +121,7 @@ window.onload = function() {
       return;
     }
 
+    //tant que le jeu n'est pas fini et qu'il a commencé :
     if( !fini){
 
       let lig = getLigne(this);
@@ -148,11 +149,13 @@ window.onload = function() {
   function estTermine(){
     let message = document.getElementById('message');
     message.style.visibility = "visible";
-    message.innerHTML = "Bravo !\nTu as reussi ce taquin en "+nbClick+" mouvements.";
+    message.innerHTML = "Bravo !\nTu as reussi ce taquin en "+nbClick+" mouvements.\nNouvelle partie : <a class=\"bouton\" href=\"taquin.php?jeu="+grid+"\">Jouer</a>";
 
     fini = true;
   }
 
+
+  //initialisation des différentes variables
 
   nbLig = document.getElementsByClassName('ligne').length;
   nbCol = tabImg.length/nbLig;
@@ -162,6 +165,8 @@ window.onload = function() {
   trou_l = getLigne(document.getElementsByName('trou')[0]);
   trou_c = getColonne(document.getElementsByName('trou')[0]);
 
+
+  //liaison des images cliquées à la fonction testClick
   for(let i = 0; i < tabImg.length ; i++){
     tabImg[i].onclick = testClick;
 

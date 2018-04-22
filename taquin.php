@@ -43,10 +43,10 @@
      <div id="band">
 
      <ul id="bandeau">
-      <li><a href="taquin.php?jeu=2x2">2x2</a></li>
-      <li><a href="taquin.php?jeu=3x2">3x2</a></li>
-      <li><a href="taquin.php?jeu=2x3">2x3</a></li>
-      <li><a href="taquin.php?jeu=3x3">3x3</a></li>
+      <li><a class="bouton" href="taquin.php?jeu=2x2">2x2</a></li>
+      <li><a class="bouton" href="taquin.php?jeu=3x2">3x2</a></li>
+      <li><a class="bouton" href="taquin.php?jeu=2x3">2x3</a></li>
+      <li><a class="bouton" href="taquin.php?jeu=3x3">3x3</a></li>
     </ul>
 
     </div>

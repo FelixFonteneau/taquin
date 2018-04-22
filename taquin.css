@@ -37,6 +37,18 @@ li {
  border-color:#696969 #DCDCDC #DCDCDC #696969;
  }
 
+ a.bouton{
+   display:block;
+   background-color:#4A0046;
+   border-color:#DCDCDC #696969 #696969 #DCDCDC;
+ }
+
+ a.bouton:hover{
+   background-color:#4A0046;
+   border-color:#696969 #DCDCDC #DCDCDC #696969;
+
+ }
+
 
 
 body {
