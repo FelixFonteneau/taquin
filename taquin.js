@@ -20,12 +20,12 @@ window.onload = function() {
   let timer;
 
   function deplacementAleatoire() {
-    //on choisi une case adjacente aléatoirement.
+    //on choisit une case adjacente aléatoirement.
     let lig;
     let col;
     if( Math.floor(Math.random()*2) == 1){
 
-      //on s'assure que le trou n'est pas sur les bords sinon on le décalle vers l'interieur
+      //on s'assure que le trou n'est pas sur les bords, sinon on le décale vers l'intérieur
         if(trou_l == nbLig-1){
           lig = trou_l - 1;
         } else if (trou_l == 0) {
@@ -82,7 +82,7 @@ window.onload = function() {
   }
 
 
-  //converti les chemins d'acces aux images.
+  //convertit les chemins d'accès aux images.
   function baseName(chemin) {
     img = chemin.split('/').reverse()[0];
     return "images/"+grid+"/"+img;
@@ -106,7 +106,7 @@ window.onload = function() {
     trou_l = lig;
   }
 
-  //dans cette fonction, on verrifie si l'utilisateur a bien cliqué sur une case valide.
+  //dans cette fonction, on verifie si l'utilisateur a bien cliqué sur une case valide.
   //puis on échange les deux cases.
   function testClick(){
     if(debut){
