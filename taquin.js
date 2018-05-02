@@ -1,11 +1,6 @@
 
-/*
-  Ce code javascript permet à l'utilisateur de pouvoir intéragir avec le jeu.
- */
 
 window.onload = function() {
-
-//--- définition des variables ---//
 
   let trou_l ;    // la ligne où se trouve le trou
   let trou_c;  // la colonne où se trouve le trou
@@ -19,84 +14,11 @@ window.onload = function() {
   let grid;
 
   let debut = true;
-  let melanger = false;
+  let genere = false;
   let fini = false;
 
   let timer;
 
-
-
-
-//--- définition des fonctions ---//
-
-  //convertit les chemins d'accès aux images.
-  function baseName(chemin) {
-    img = chemin.split('/').reverse()[0];
-    return "images/"+grid+"/"+img;
-  }
-
-
-  //cette méthode retourne la place de l'element dans la liste
-  function getPlace(element) {
-    for(var i = 0; i < tabImg.length ; i++){
-      if(element == tabImg[i] ) return i;
-    }
-  }
-
-  //retourne la ligne de l'element
-  function getLigne(element){
-    return Math.floor((getPlace(element))/nbCol);
-  }
-
-  //retourne la colonne de l'element
-  function getColonne(element) {
-    return getPlace(element)%nbCol;
-  }
-
-
-  //dans cette fonction, on verifie si l'utilisateur a bien cliqué sur une case valide.
-  //puis on échange les deux cases.
-  function testClick(){
-    //si on se trouve au début du jeu, on va mélanger le jeu
-    if(debut){
-      if(!melanger){
-        melange();
-        return;
-      }
-      //si on melange et que l'utilisateur clique une nouvelle fois, on arrete la generation.
-      clearInterval(timer);
-      //on fait commencer le jeu.
-      debut = false;
-      return;
-    }
-
-    //tant que le jeu n'est pas fini et qu'il a commencé :
-    if( !fini){
-
-      let lig = getLigne(this);
-      let col = getColonne(this);
-      if( estAdjacent(lig,col) ){
-        decalage(lig, col, this);
-        nbClick ++;
-        //à chaque déplacement de l'utilisateur on vérifie si le jeu est terminé.
-        verif();
-      }
-    }
-  }
-
-
-
-  //dans cette méthode, on va mélanger le jeu, en effectuant des déplacements alèatoires
-  // toutes les 10 ms.
-  function melange() {
-    melanger = true;
-    //toutes les demi-secondes, on effectue un déplacement aléatoirement d'image.
-    timer = setInterval(deplacementAleatoire, 10);
-  }
-
-
-
-  //dans cette méthode, on va echanger ou déplacer le trou.
   function deplacementAleatoire() {
     //on choisit une case adjacente aléatoirement.
     let lig;
@@ -124,10 +46,35 @@ window.onload = function() {
         }
         lig = trou_l;
     }
+
     //on effectue le déplacement.
     decalage(lig, col, document.getElementsByClassName('grille')[col+nbCol*lig]);
+
   }
 
+  function generation() {
+    genere = true;
+    //toutes les demi-secondes, on mélange aléatoirement l'image.
+    timer = setInterval(deplacementAleatoire, 1);
+  }
+
+
+  //retourne la place de l'element dans la liste
+  function getPlace(element) {
+    for(var i = 0; i < tabImg.length ; i++){
+      if(element == tabImg[i] ) return i;
+    }
+  }
+
+  //retourne la ligne de l'element
+  function getLigne(element){
+    return Math.floor((getPlace(element))/nbCol);
+  }
+
+  //retourne la colonne de l'element
+  function getColonne(element) {
+    return getPlace(element)%nbCol;
+  }
 
   //verifie si une case est adjacente au trou
   function estAdjacent(ligne,colonne) {
@@ -135,10 +82,15 @@ window.onload = function() {
   }
 
 
+  //convertit les chemins d'accès aux images.
+  function baseName(chemin) {
+    img = chemin.split('/').reverse()[0];
+    return "images/"+grid+"/"+img;
+  }
 
-  //cette méthode va décaler une case avec le trou.
   function decalage(lig, col, image) {
     let trou = document.getElementsByName('trou')[0]
+
     //on echange les sources des images.
     let buffer = baseName(image.src);
     image.src = baseName(trou.src);
@@ -154,7 +106,33 @@ window.onload = function() {
     trou_l = lig;
   }
 
+  //dans cette fonction, on verifie si l'utilisateur a bien cliqué sur une case valide.
+  //puis on échange les deux cases.
+  function testClick(){
+    if(debut){
+      if(!genere){
+        generation();
+        return;
+      }
+      //si on genere et que l'utilisateur clique une nouvelle fois, on arrete la generation.
+      clearInterval(timer);
+      //on fait commencer le jeu.
+      debut = false;
+      return;
+    }
 
+    //tant que le jeu n'est pas fini et qu'il a commencé :
+    if( !fini){
+
+      let lig = getLigne(this);
+      let col = getColonne(this);
+      if( estAdjacent(lig,col) ){
+        decalage(lig, col, this);
+        nbClick ++;
+        verif();
+      }
+    }
+  }
 
   //dans cette fonction, on verifie si l'utilisateur a reussi le jeu
   function verif(){
