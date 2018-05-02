@@ -2,6 +2,9 @@
 
 window.onload = function() {
 
+
+///--- définition des variables ---///
+
   let trou_l ;    // la ligne où se trouve le trou
   let trou_c;  // la colonne où se trouve le trou
   let nbClick = 0;  // le nombre de chiffres déplacés
@@ -14,10 +17,13 @@ window.onload = function() {
   let grid;
 
   let debut = true;
-  let genere = false;
+  let melanger = false;
   let fini = false;
 
   let timer;
+
+
+///--- définition des fonctions ---///
 
   function deplacementAleatoire() {
     //on choisit une case adjacente aléatoirement.
@@ -52,8 +58,8 @@ window.onload = function() {
 
   }
 
-  function generation() {
-    genere = true;
+  function melange() {
+    melanger = true;
     //toutes les demi-secondes, on mélange aléatoirement l'image.
     timer = setInterval(deplacementAleatoire, 1);
   }
@@ -110,11 +116,11 @@ window.onload = function() {
   //puis on échange les deux cases.
   function testClick(){
     if(debut){
-      if(!genere){
-        generation();
+      if(!melanger){
+        melange();
         return;
       }
-      //si on genere et que l'utilisateur clique une nouvelle fois, on arrete la generation.
+      //si on melanger et que l'utilisateur clique une nouvelle fois, on arrete la melange.
       clearInterval(timer);
       //on fait commencer le jeu.
       debut = false;
@@ -155,7 +161,8 @@ window.onload = function() {
   }
 
 
-  //initialisation des différentes variables
+
+//--- initialisation des différentes variables ---//
 
   nbLig = document.getElementsByClassName('ligne').length;
   nbCol = tabImg.length/nbLig;
