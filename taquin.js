@@ -34,10 +34,29 @@ window.onload = function() {
 ///--- définition des fonctions ---///
 
 
+  //retourne la place de l'element dans la liste
+  function getPlace(element) {
+    for(var i = 0; i < tabImg.length ; i++){
+      if(element == tabImg[i] ) return i;
+    }
+  }
 
-  //dans cette fonction, on verifie si l'utilisateur a bien cliqué sur une case valide.
+  //retourne la ligne de l'element
+  function getLigne(element){
+    return Math.floor((getPlace(element))/nbCol);
+  }
+
+  //retourne la colonne de l'element
+  function getColonne(element) {
+    return getPlace(element)%nbCol;
+  }
+
+
+
+  //Cette méthode est appelée à chaque click sur une image, on verifie si l'utilisateur a bien cliqué sur une case valide.
   //puis on échange les deux cases.
   function testClick(){
+    //au premier click on mélange le jeu.
     if(debut){
       if(!melanger){
         melange();
@@ -63,24 +82,6 @@ window.onload = function() {
     }
   }
 
-
-
-  //retourne la place de l'element dans la liste
-  function getPlace(element) {
-    for(var i = 0; i < tabImg.length ; i++){
-      if(element == tabImg[i] ) return i;
-    }
-  }
-
-  //retourne la ligne de l'element
-  function getLigne(element){
-    return Math.floor((getPlace(element))/nbCol);
-  }
-
-  //retourne la colonne de l'element
-  function getColonne(element) {
-    return getPlace(element)%nbCol;
-  }
 
 
   // dans cette méthode, on va appeler la fonction deplacementAleatoire toute les 10ms pour mélanger le jeu.
@@ -123,7 +124,18 @@ window.onload = function() {
     decalage(lig, col, document.getElementsByClassName('grille')[col+nbCol*lig]);
   }
 
+  function getImage(lig, col){
+    console.log("ligne : "+lig+" cole : "+col);
+    return tabImg[lig*nbCol+col];
+  }
 
+  function decalageLigne(lig, col, image){
+    
+  }
+
+
+
+  //cette méthode va effectuer le décalage d'une case à coté du trou.
   function decalage(lig, col, image) {
     let trou = document.getElementsByName('trou')[0]
 
@@ -180,7 +192,7 @@ window.onload = function() {
 
 
 
-//--- initialisation des différentes variables ---//
+///--- initialisation des différentes variables ---///
 
   nbLig = document.getElementsByClassName('ligne').length;
   nbCol = tabImg.length/nbLig;
