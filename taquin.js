@@ -75,7 +75,7 @@ window.onload = function() {
       let lig = getLigne(this);
       let col = getColonne(this);
       if( estAdjacent(lig,col) ){
-        decalage(lig, col, this);
+        decalage(lig, col);
         nbClick ++;
         verif();
       }
@@ -121,22 +121,22 @@ window.onload = function() {
         lig = trou_l;
     }
     //on effectue le déplacement.
-    decalage(lig, col, document.getElementsByClassName('grille')[col+nbCol*lig]);
+    decalage(lig, col);
   }
 
   function getImage(lig, col){
-    console.log("ligne : "+lig+" cole : "+col);
-    return tabImg[lig*nbCol+col];
+    return document.getElementsByClassName('grille')[col+nbCol*lig];
   }
 
-  function decalageLigne(lig, col, image){
-    
+  function decalageLigne(lig, col){
+
   }
 
 
 
   //cette méthode va effectuer le décalage d'une case à coté du trou.
-  function decalage(lig, col, image) {
+  function decalage(lig, col) {
+    let image = getImage(lig,col);
     let trou = document.getElementsByName('trou')[0]
 
     //on echange les sources des images.
