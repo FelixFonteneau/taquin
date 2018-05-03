@@ -33,7 +33,7 @@ li {
  border-color:#DCDCDC #696969 #696969 #DCDCDC;
  }
 #bandeau li a:hover {
- background-color:#1FCCA2;
+ background-color:#1F7DCC;
  border-color:#696969 #DCDCDC #DCDCDC #696969;
  }
 
@@ -44,7 +44,7 @@ li {
  }
 
  a.bouton:hover{
-   background-color:#1FCCA2;
+   background-color:#1F7DCC;
    border-color:#696969 #DCDCDC #DCDCDC #696969;
 
  }
