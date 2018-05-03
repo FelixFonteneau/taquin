@@ -97,3 +97,8 @@ h1 {
   font-size: 100px;
 }
 
+#choix a img.displayed{
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+}
