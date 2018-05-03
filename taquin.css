@@ -24,6 +24,8 @@ li {
  display:block;
  float:left;
  width:100px;
+ font-size: 20px;
+ color:#16588F;
  background-color:#1FCCA2;
  text-decoration:none;
  text-align:center;
