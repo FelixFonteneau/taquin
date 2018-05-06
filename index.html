@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    <h1>Le Taquin</h1>
-    <hr>
+    <h1> Le Taquin </h1>
+    <br>
     <h2> Dans le cadre du projet de fin d'année d'Applications du Web, Félix Fonteneau et Saveria Frati--Peraldi vous présentent leur version du TAQUIN.
     </h2>
 
@@ -20,16 +20,15 @@
 	Lorsque le taquin est résolu, un message au bas de la page vous indique le nombre de déplacements utilisés pour la résolution.
 	</p>
 
-<div id='choix'>
-	<p>Veuillez choisir la taille de la grille: 2x2, 2x3, 3x2 ou 3x3. </p>
+	<p>Veuillez choisir la taille de la grille: 2x2, 2x3, 3x2 ou 3x3 en cliquant sur l'image correspondante. </p>
 
-  <form action="taquin.php" method="get">
-    <input type="radio" name="jeu" value="2x2" checked="checked"> 2x2 <br/>
-    <input type="radio" name="jeu" value="2x3" checked="unchecked"> 2x3 <br/>
-    <input type="radio" name="jeu" value="3x2" checked="unchecked"> 3x2 <br/>
-    <input type="radio" name="jeu" value="3x3" checked="unchecked"> 3x3   <br/>
-    <input type="submit" value="JOUER">
-  </form>
+    <div id='choix'>
+        <a href=taquin.php?jeu=2x2><img src="2x2.png"/></a>       
+        <a href=taquin.php?jeu=3x2><img src="3x2.png"/></a>  
+        <a href=taquin.php?jeu=2x3><img src="2x3.png"/></a>
+        <a href=taquin.php?jeu=3x3><img src="3x3.png"/></a>
+
+
 </div>
 </body>
 
