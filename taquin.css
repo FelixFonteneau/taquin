@@ -97,6 +97,17 @@ h1 {
   font-size: 100px;
 }
 
+#choix{
+  text-align: center;
+}
+
+#choix a{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+
+
 #choix a img.displayed{
   display:block;
   margin-left: auto;
