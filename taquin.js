@@ -217,7 +217,8 @@ window.onload = function() {
     function estTermine(){
       let message = document.getElementById('message');
       message.style.visibility = "visible";
-      message.innerHTML = "Bravo !\nTu as reussi ce taquin en "+nbClick+" mouvements.\nNouvelle partie : <a class=\"bouton\" href=\"taquin.php?jeu="+grid+"\">Jouer</a>";
+      message.innerHTML = "Bravo !\nTu as reussi ce taquin en "+nbClick+" mouvements !";
+
 
       fini = true;
     }

@@ -38,7 +38,7 @@
  </head>
 
  <body>
-     <h1>Le Taquin</h1>
+     <h1>Le Taquin : grille <?php echo $grid?></h1>
 
      <div id="band">
 
@@ -51,7 +51,8 @@
 
     </div>
 
-     <div id="message" style="visibility: hidden"></div>
+    <div id="message" style="visibility: hidden"></div>
+
      <div id="jeu">
         <?php
 
