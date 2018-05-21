@@ -8,6 +8,9 @@
   l'utilisateur termine.
 */
 
+var enCours = false;
+
+
 window.onload = function() {
 
 
@@ -90,6 +93,7 @@ window.onload = function() {
         clearInterval(timer);
         //on fait commencer le jeu.
         debut = false;
+        enCours = true;9  
         return;
       }
 
@@ -219,7 +223,7 @@ window.onload = function() {
       message.style.visibility = "visible";
       message.innerHTML = "Bravo !\nTu as reussi ce taquin en "+nbClick+" mouvements !";
 
-
+      enCours = false;
       fini = true;
     }
 
@@ -242,3 +246,22 @@ window.onload = function() {
 
   }
 };
+
+var confirmOnLeave = function(msg) {
+    window.onbeforeunload = function (e) {
+        e = e || window.event;
+        msg = 'Vous allez arreter le jeu en cours ?';
+
+        if(enCours){ // on demande
+          // Pour les utilisateurs internet explorer et Firefox
+          if (e) {e.returnValue = 'Vous allez arreter le jeu en cours ?';}
+
+          // Pour les utilisateurs Safari et Chrome
+          return msg;
+        }
+    };
+};
+
+
+// message de confirmation générique du navigateur
+confirmOnLeave('Vous allez arreter le jeu en cours ?');

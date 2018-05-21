@@ -2,6 +2,11 @@
 
 
   //récupération de la dimension du jeu
+
+  if(!isset($_GET["jeu"])){
+    header("Location: index.html");
+  }
+
   $grid = $_GET["jeu"];
 
   function getNom($path) {
@@ -43,6 +48,7 @@
      <div id="band">
 
      <ul id="bandeau">
+      <li><a class="bouton" href="index.html"><b>Menu</b></a></li>
       <li><a class="bouton" href="taquin.php?jeu=2x2"><b>2x2</b></a></li>
       <li><a class="bouton" href="taquin.php?jeu=3x2"><b>3x2</b></a></li>
       <li><a class="bouton" href="taquin.php?jeu=2x3"><b>2x3</b></a></li>
