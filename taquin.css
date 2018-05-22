@@ -12,11 +12,13 @@
 }
 
 #jeu{
+  background-color: #1FCCA2;
   display: table;
   margin: 0 auto;
   text-align: center;
   margin: auto;
   margin-top: 40px;
+  padding: 30px;
 }
 
 #band{
