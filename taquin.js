@@ -9,7 +9,7 @@
 */
 
 var enCours = false;
-
+var help = true;
 
 window.onload = function() {
 
@@ -93,7 +93,7 @@ window.onload = function() {
         clearInterval(timer);
         //on fait commencer le jeu.
         debut = false;
-        enCours = true;9  
+        enCours = true;9
         return;
       }
 
@@ -247,6 +247,19 @@ window.onload = function() {
   }
 };
 
+////---- Fonction d'appartition de texte ----////
+function aide(){
+  let cache = document.getElementById("cache");
+  if(help){
+    cache.style.visibility = "visible";
+  }else{
+    cache.style.visibility = "hidden";
+  }
+  help = !(help);
+}
+
+
+////---- Message "etes vous sur de quitter ?" avant la fin de la partie ----////
 var confirmOnLeave = function(msg) {
     window.onbeforeunload = function (e) {
         e = e || window.event;

@@ -1,0 +1,23 @@
+#choix {
+  background-color: #1FCCA2;
+  margin-left: 80px;
+  margin-right: 80px;
+  padding-top: 25px;
+  padding-bottom:25px;
+}
+
+#choix a{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#choix a img{
+  width: 90px;
+}
+
+
+#choix a img.displayed{
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+}

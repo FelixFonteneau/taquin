@@ -1,6 +1,22 @@
+#help{
+  position: absolute;
+  margin-left: 5px;
+}
+
+#help li{
+  margin-top: 10px;
+}
+
+#help li img {
+  margin-top: 10px;
+}
+
 #jeu{
   display: table;
   margin: 0 auto;
+  text-align: center;
+  margin: auto;
+  margin-top: 40px;
 }
 
 #band{
@@ -94,29 +110,11 @@ input[type=radio] {
 
 h1 {
   background-color: #3A7F6E;
-  font-size: 100px;
-}
-
-#choix{
-  text-align: center;
-}
-
-#choix a{
-  margin-left: 20px;
-  margin-right: 20px;
 }
 
 
 
-#choix a img.displayed{
-  display:block;
-  margin-left: auto;
-  margin-right: auto;
-}
 
-
-#jeu{
-  text-align: center;
-  margin: auto;
-  margin-top: 60px;
+#cache{
+  width: 360px;
 }
