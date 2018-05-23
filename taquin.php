@@ -60,15 +60,15 @@
     <div id="message" style="visibility: hidden"></div>
 
     <div id="help">
-      <button onclick="aide()" >Aide/Regles</button>
+      <button onclick="aide()" >Aide / Règles</button>
       <div id="cache" style="visibility: hidden">
         <ul>
           <li>Cliquez une première fois sur la grille pour mélanger le jeu.</li>
-          <li>Cliquez une seconde fois pour arreter de mélanger.</li>
-          <li>Une fois le jeu commencé, remmettez les cases dans le bon ordre selon l'image suivante :
+          <li>Cliquez une seconde fois pour arrêter de mélanger.</li>
+          <li>Une fois le jeu commencé, positionnez les cases dans l'ordre indiqué par l'image suivante :
             <br><img id="mini" src=<?php echo "\"images/$grid.png\""; ?> alt="grille"></li>
 
-          <li>Pour bouger les cases, cliquez sur une case une ligne ou une collone entière adjacente au trou pour la décaller.</li>
+          <li>Pour déplacer les cases: cliquez sur une case, une ligne ou une colonne adjacente au trou pour la décaler, on peut déplacer jusqu'à deux cases consécutivement.</li>
         </ul>
       </div>
     </div>

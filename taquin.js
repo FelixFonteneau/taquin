@@ -245,6 +245,8 @@ window.onload = function() {
     tabImg[i].onclick = testClick;
 
   }
+
+  confirmOnLeave('Vous allez arreter le jeu en cours ?');
 };
 
 ////---- Fonction d'appartition de texte ----////
@@ -260,7 +262,7 @@ function aide(){
 
 
 ////---- Message "etes vous sur de quitter ?" avant la fin de la partie ----////
-var confirmOnLeave = function(msg) {
+function confirmOnLeave(msg) {
     window.onbeforeunload = function (e) {
         e = e || window.event;
         msg = 'Vous allez arreter le jeu en cours ?';
@@ -274,7 +276,3 @@ var confirmOnLeave = function(msg) {
         }
     };
 };
-
-
-// message de confirmation générique du navigateur
-confirmOnLeave('Vous allez arreter le jeu en cours ?');
